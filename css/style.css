@@ -412,8 +412,8 @@ body {
   }
   .header {
     height: 80px;
-    padding-right: 2.5%;
-    padding-left: 2.5%;
+    padding-right: 28px;
+    padding-left: 28px;
   }
   .mobile-buttons {
     display: block;
@@ -424,8 +424,10 @@ body {
     display: none;
   }
   .film {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 60px;
+    padding-left: 28px;
+    padding-right: 28px;
   }
   .film-wrapper {
     flex-wrap: wrap;
@@ -477,6 +479,7 @@ body {
   }
   .film-trailer {
     margin-bottom: 30px;
+    margin-right: 0;
   }
   .film-text {
     order: 1;
@@ -495,6 +498,13 @@ body {
   }
   .cast {
     padding-bottom: 50px;
+    padding-left: 28px;
+  }
+  .news {
+    padding-top: 53px;
+  }
+  .section-news-title {
+    margin-left: 28px;
   }
   .news-card {
     flex-basis: 100%;
