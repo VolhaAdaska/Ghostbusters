@@ -10,13 +10,23 @@ body {
   color: #363636;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 104px;
   padding-left: 34px;
   border-bottom: 1px solid #D4D4D4;
+}
+
+.m-menu {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
 }
 
 .line {
@@ -144,6 +154,7 @@ body {
   padding-top: 25px;
   padding-bottom: 25px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* .trailer-button-icon,
@@ -266,9 +277,19 @@ body {
 }
 
 .tabs-content {
-  display: flex;
+  display: none;
   align-items: center;
   flex-wrap: wrap;
+  visibility: hidden;
+}
+
+.tabs-content.visible {
+  display: flex;
+  visibility: visible;
+}
+
+.tab {
+  cursor: pointer;
 }
 
 .card {
@@ -335,6 +356,17 @@ body {
   line-height: 16px;
   color: #000000;
   margin-top: 14px;
+}
+
+.button-next {
+  display: none;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
 }
 
 @media (max-width: 1200px) {
@@ -415,12 +447,56 @@ body {
     padding-right: 28px;
     padding-left: 28px;
   }
+  .m-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 68px;
+    bottom: 0;
+    /* height: calc(100% - 68px); */
+    background: #5671F6;
+  }
+  .m-menu.active{
+    display: flex;
+  }
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .navigation-link {
+    color: #fff;
+    margin-bottom: 18px;
+    margin-right: 0;
+  }
+  .navigation-link:last-child {
+    margin-bottom: 0;
+  }
+  .button-group {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 131px;
+  }
+  .search-input {
+    width: 260px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-image: none;
+    margin: 0;
+  }
   .mobile-buttons {
     display: block;
+    margin-left: auto;
   }
-  .button-group,
-  .line,
-  .search-input {
+  .line {
     display: none;
   }
   .film {
@@ -428,6 +504,12 @@ body {
     padding-bottom: 60px;
     padding-left: 28px;
     padding-right: 28px;
+  }
+  .sign-up {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    margin-bottom: 30px;
   }
   .film-wrapper {
     flex-wrap: wrap;
@@ -443,6 +525,12 @@ body {
   .news {
     padding-top: 50px;
     padding-bottom: 70px;
+  }
+  .news-card {
+    max-width: 90%;
+  }
+  .button-next {
+    display: block;
   }
 }
 
